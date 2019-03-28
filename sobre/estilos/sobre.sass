@@ -1,11 +1,15 @@
 @import 'reset.css'
 html 
     font-family: 'Open Sans'
-.logo
+.logo 
+    width: 50%
+    display: flex
+    align-content: center
+.logo-img
     height: 50px
 .logo-text
     margin-left: 1%
-    font-size: 2em
+    font-size: 1.5em
     font-family: 'Open Sans'
     font-weight: 700
     color: white
@@ -15,8 +19,16 @@ nav
     align-items: center
     padding: 0.5% 10%
     background-color: #383838
+    @media (max-width:440px)
+        padding: 0.8% 3%
     input
        margin-left: auto
+       @media (max-width:440px)
+            margin-left: 2%
+            width: 50%
+
+
+
 header
     display: flex
     flex-direction: column
@@ -27,6 +39,8 @@ header
     background-repeat: no-repeat
     background-position: center
     background-size: cover
+    @media (max-width:440px)
+        padding: 0
     .about
         margin-left: 10%
         display: flex
@@ -34,6 +48,9 @@ header
         justify-content: space-evenly
         width: 40%
         height: 100%
+        @media (max-width:440px)
+            width: 98%
+            margin: 0 2%
         h1 
             margin: 0
             font-family: 'Open Sans'
@@ -51,32 +68,73 @@ header
             font-family: 'Open Sans'
             border-radius: 4px
             padding: 5%
+            @media (max-width:440px)
+                width: 98%
+
 .our-team
-    background-color: #010A2B
-    padding-top: 5%
-    padding-left: 5%
-    padding-right: 5%
-    display: flex
-    align-items: center
-    justify-content: space-between
-    img 
-        width: 35%
-        order: 1
+    background-color: #010A2B     
+    padding: 2% 4%
+    @media (max-width: 740px)
+        padding-bottom: 15%
     .our-team-about
-        width: 60%
-        order: 2
-        display: flex
-        flex-direction: column
+        display: grid
+        grid-template-columns: 1fr 2fr
+        grid-template-rows: 54px 134px auto
+        grid-gap: 3%
+        width: 100%
         color: #8a9af2
+        @media (max-width: 740px)
+            grid-template-columns: 2fr
+            grid-template-rows: 54px 50px auto
+        .our-team-img
+            background: url(../imagens/requite.jpeg)
+            background-size: contain
+            background-repeat: no-repeat
+            height: 197px
+            width: 349px
+            grid-column: 1
+            grid-row: 2
+            @media (max-width: 740px)
+                grid-column: 1
+                grid-row: 2
+                height: 50px
+                width: 100%
+                margin-bottom: 10%
+                background-size: auto
+                background-position: center
         h1 
             color: white
             text-align: center
             font-weight: 700   
+            grid-column: 2
+            grid-row: 1
+            @media (max-width: 740px)
+                grid-column: 1
+                grid-row: 1
+    
+        p 
+            grid-column: 2
+            grid-row: 2
+            @media (max-width: 740px)
+                grid-column: 1
+                grid-row: 3
         a 
             text-decoration: none
             color: white
             font-size: 1.2em
             margin-bottom: 1%
+            grid-column: 2
+            @media (max-width: 740px)
+                grid-column: 1
+             
+            &:nth-child(1)
+                 grid-row: 3
+                 @media (max-width: 740px)
+                    grid-row: 4
+            &:nth-child(1)
+                grid-row: 4
+                @media (max-width: 740px)
+                     grid-row: 5
             i 
                 margin-right: 3px
                 color: #8a9af2
@@ -88,26 +146,36 @@ header
     display: flex
     justify-content: space-between
     padding-top: 3%
+    @media (max-width:440px)
+        flex-direction: column
     article
         color: white
         display: flex
         flex-direction: column
         align-items: center
         text-align: center
-        padding: 3% 2%
+        padding: 3% 0%
         margin: 1%
         width: 32%
         border: 1px solid #8a9af2
+        @media (max-width:440px)
+            width: 97%
+            padding: 8% 0%
+            margin-bottom: 3%
         img 
-            width: 100%
+            width: 90%
+
         p 
             color: #8a9af2
             text-align: justify
+            padding: 0% 5%
 
 footer 
     background-color: #383838
     display: flex
     padding: 0.5% 0 0.5% 10%
+    @media (max-width: 440px)
+        padding: 0.5% 0 0.5% 1%
     .social-medias
         margin-left: auto
         display: flex
@@ -121,9 +189,14 @@ footer
             background-size: contain
             background-repeat: no-repeat
             margin-right: 5%
+            @media (max-width: 440px)
+                width: 20%
+                margin-right: 19%
         .facebook
             background-image: url(../imagens/facebook.png) 
         .twitter
             background-image: url(../imagens/twitter.png)     
         .google
             background-image: url(../imagens/googleplus.png)
+
+
